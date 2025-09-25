@@ -9,39 +9,47 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 30px;
+            margin: 40px auto;
             line-height: 1.6;
             background-color: #f9f9f9;
-            text-align: center; 
+            width: 800px;  /* cố định chiều rộng CV */
+            padding: 20px;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
         }
         h1, h2 {
             color: #007acc;
+            margin-bottom: 10px;
         }
         hr {
             border: 1px solid #ddd;
             margin: 20px 0;
         }
         .avatar {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #007acc;
             margin-bottom: 15px;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        section {
+            margin-bottom: 25px;
         }
-        ul li {
-            margin: 5px 0;
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h2>🌟 Introduction</h2>
+        <h2>Introduction</h2>
         <p>Here is a brief introduction about myself.</p>
         <hr>
 
@@ -55,12 +63,22 @@
     </header>
 
     <section>
-        <h2>🎓 Education</h2>
+        <h2>Career Objective</h2>
+        <p>Aspiring to become a professional Business Analyst (BA), 
+           applying analytical skills and management information system knowledge 
+           to bridge the gap between business needs and technical solutions.</p>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <p><strong>High School:</strong> Nguyen Duc Canh High School</p>
+        <p><strong>University:</strong> 3rd-year student, Management Information Systems</p>
+        <p>International School – Vietnam National University, Hanoi</p>
         <p><strong>GPA:</strong> 3.0 / 4.0</p>
     </section>
 
     <section>
-        <h2>💻 Skills</h2>
+        <h2>Skills</h2>
         <ul>
             <li>Programming Languages: C, Python</li>
             <li>English Proficiency: IELTS 6.5</li>
@@ -68,15 +86,17 @@
     </section>
 
     <section>
-        <h2>🎯 Personal Interests</h2>
-        <p>☕ Enjoy drinking coffee</p>
-        <p>🎬 Watching movies</p>
-        <p>🌍 Traveling and exploring new experiences</p>
+        <h2>Personal Interests</h2>
+        <ul>
+            <li>Enjoy drinking coffee</li>
+            <li>Watching movies</li>
+            <li>Traveling and exploring new experiences</li>
+        </ul>
     </section>
 
     <footer>
         <hr>
-        <p><em>CV designed with HTML5 - Khong Thuy Linh</em></p>
+        <p style="text-align:center;"><em>CV designed with HTML5 - Khong Thuy Linh</em></p>
     </footer>
 
 </body>
