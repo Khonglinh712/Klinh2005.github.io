@@ -2,101 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="keywords" content="CV, HTML, CSS, Student, IT, Personal Info">
-    <meta name="description" content="CV Online - Khong Thuy Linh">
-    <meta name="author" content="Khong Thuy Linh">
-    <title>CV - Khong Thuy Linh</title>
+    <title>My CV - Khổng Thuỳ Linh</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            background: #ccc; 
             font-family: Arial, sans-serif;
-            margin: 40px auto;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            width: 800px;  
-            padding: 20px;
-            border: 1px solid #ddd;
-            background: #fff;
         }
-        header {
+        nav#topmenu ul {
+            list-style: none;
+            background-color: #444;
             text-align: center;
-            margin-bottom: 30px;
+            padding: 0;
+            margin: 0;
+        }
+        nav#topmenu li {
+            font-size: 18px;
+            line-height: 40px;
+            height: 40px;
+            display: inline-block;
+            padding: 20px;
+        }
+        nav#topmenu a {
+            text-decoration: none;
+            color: #fff;
+        }
+        nav#topmenu a:hover {
+            color: yellow;
+        }
+
+        /* CV Content */
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
         }
         h1, h2 {
-            color: #007acc;
-            margin-bottom: 10px;
+            text-align: center;
         }
-        hr {
-            border: 1px solid #ddd;
-            margin: 20px 0;
-        }
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #007acc;
-            margin-bottom: 15px;
-        }
-        section {
-            margin-bottom: 25px;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
+        p, li {
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav id="topmenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#objective">Objective</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <header>
-        <img src="CV.jpg" alt="Profile Photo" class="avatar">
-
-        <h1>Khong Thuy Linh</h1>
-        <p><strong>Date of Birth:</strong> 07/12/2005</p>
-        <p><strong>Hometown:</strong> Thai Binh</p>
-        <p><strong>Phone:</strong> 0967697512</p>
+    <!-- Home -->
+    <div class="container" id="home">
+        <h1>Khổng Thuỳ Linh - My CV</h1>
         <p><strong>Email:</strong> khongthuylinh2005@gmail.com</p>
-    </header>
+        <p><strong>Phone:</strong> 0967 697 512</p>
+    </div>
 
-    <section>
-        <h2>About Me & Career Objective</h2>
-        <p>I am a 3rd-year student in Management Information Systems at 
-           International School – Vietnam National University, Hanoi. 
-           I am passionate about technology and problem-solving, with a strong foundation in programming and analytical skills.</p>
-        <p>My career objective is to become a professional Business Analyst (BA), 
-           applying my knowledge of management information systems to connect 
-           business requirements with effective technical solutions.</p>
-    </section>
+    <!-- About -->
+    <div class="container" id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a third-year student majoring in Management Information Systems at VNU-International School. 
+            I am passionate about software development, web design, and problem-solving. 
+        </p>
+    </div>
 
-    <section>
+    <!-- Career Objective -->
+    <div class="container" id="objective">
+        <h2>Career Objective</h2>
+        <p>
+            My goal is to become a Business Analyst with strong technical and analytical skills. 
+            I aim to contribute to developing IT solutions that improve organizational efficiency 
+            and enhance customer experiences.
+        </p>
+    </div>
+
+    <!-- Education -->
+    <div class="container" id="education">
         <h2>Education</h2>
-        <p><strong>High School:</strong> Nguyen Duc Canh High School</p>
-        <p><strong>University:</strong> 3rd-year student, Management Information Systems</p>
-        <p>International School – Vietnam National University, Hanoi</p>
-        <p><strong>GPA:</strong> 3.0 / 4.0</p>
-    </section>
+        <p><strong>VNU - International School</strong> (2022 - Present)</p>
+        <p>Bachelor's Degree in Management Information Systems</p>
+        <ul>
+            <li>Specialized in database systems, programming, and business analysis</li>
+            <li>Gained practical experience in software development and data visualization</li>
+        </ul>
+    </div>
 
-    <section>
+    <!-- Skills -->
+    <div class="container" id="skills">
         <h2>Skills</h2>
         <ul>
-            <li>Programming Languages: C, Python</li>
-            <li>English Proficiency: IELTS 6.5</li>
+            <li>Proficient in Python, C, C++</li>
+            <li>Good knowledge of HTML, CSS, JavaScript</li>
+            <li>Basic experience with SQL/MySQL</li>
+            <li>Web application development and design</li>
         </ul>
-    </section>
+    </div>
 
-    <section>
-        <h2>Personal Interests</h2>
+    <!-- Projects -->
+    <div class="container" id="projects">
+        <h2>Projects</h2>
         <ul>
-            <li>Enjoy drinking coffee</li>
-            <li>Watching movies</li>
-            <li>Traveling and exploring new experiences</li>
+            <li><strong>Student Management Website</strong> – Developed a web-based system to manage student records and courses.</li>
+            <li><strong>Mini Chat Application</strong> – Built a simple real-time chat app using JavaScript and web sockets.</li>
+            <li><strong>Small JavaScript Game</strong> – Created an interactive browser-based game as a learning project.</li>
         </ul>
-    </section>
+    </div>
 
-    <footer>
-        <hr>
-        <p style="text-align:center;"><em>CV designed with HTML5 - Khong Thuy Linh</em></p>
-    </footer>
-
+    <!-- Contact -->
+    <div class="container" id="contact">
+        <h2>Contact</h2>
+        <p><strong>Email:</strong> khongthuylinh2005@gmail.com</p>
+        <p><strong>Phone:</strong> 0967 697 512</p>
+    </div>
 </body>
 </html>
