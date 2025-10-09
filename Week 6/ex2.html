@@ -1,44 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Aptech CSS3 Practice</title>
     <style>
-        /* ===== PHẦN 1: RECOGNIZE ODD AND EVEN ELEMENT ===== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #fafafa;
+        }
+
         h2 {
             text-align: center;
             color: #333;
-            font-family: Arial, sans-serif;
+            margin-top: 40px;
         }
 
+        /* ===== PHẦN 1: RECOGNIZE ODD AND EVEN ELEMENT ===== */
         .subject-list {
             width: 400px;
-            margin: 10px auto;
-            padding: 10px;
+            margin: 20px auto;
             border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .subject-list div {
-            padding: 6px;
+            padding: 10px;
+            font-size: 15px;
         }
 
-        /* Dòng chẵn */
         .subject-list div:nth-child(even) {
             background-color: #d0ebff; /* xanh nhạt */
         }
 
-        /* Dòng lẻ */
         .subject-list div:nth-child(odd) {
             background-color: #fff3bf; /* vàng nhạt */
         }
 
         hr {
-            margin: 40px 0;
+            margin: 50px auto;
+            width: 70%;
+            border: 1px dashed #ccc;
         }
 
         /* ===== PHẦN 2: CREATE PRODUCT LIST WITH CSS3 ===== */
-        .ProductDetails {
-            display: none;
+        .product-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .Product {
+            text-align: center;
+            width: 160px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .Product:hover {
+            transform: scale(1.05);
         }
 
         .Product img {
@@ -46,6 +69,11 @@
             height: 150px;
             border-radius: 20px;
             box-shadow: 5px 5px 10px #aaa;
+        }
+
+        .ProductDetails {
+            display: none;
+            margin-top: 5px;
         }
 
         .ProductName {
@@ -56,30 +84,14 @@
             font-style: italic;
         }
 
-        .Product {
-            text-align: center;
-            width: 150px;
-            margin: 0px 20px;
-            float: left;
-            cursor: pointer;
-        }
-
-        /* Hiệu ứng khi hover vào sản phẩm */
         .Product:hover .ProductDetails {
             display: block;
-        }
-
-        /* Định dạng cho vùng sản phẩm */
-        .product-container {
-            width: 100%;
-            text-align: center;
-            overflow: auto;
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== PHẦN 1 ===== -->
+    
     <h2>Recognize Odd and Even Element</h2>
     <div class="subject-list">
         <div>Elementary Programming in C.</div>
@@ -92,7 +104,7 @@
 
     <hr>
 
-    <!-- ===== PHẦN 2 ===== -->
+    
     <h2>Create Product List with CSS3</h2>
     <div class="product-container">
         <div class="Product">
@@ -107,7 +119,7 @@
             <img src="tulip.jpg" alt="Tulip">
             <div class="ProductDetails">
                 <div class="ProductName">Tulip</div>
-                <div class="ProductPrice">1.2$</div>
+                <div class="ProductPrice">2.0$</div>
             </div>
         </div>
 
