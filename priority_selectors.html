@@ -2,8 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>The priority of selectors</title>
+    <title>The Priority of Selectors + Odd/Even</title>
     <style type="text/css">
+        /* -----------------------------
+           PHẦN 1: Priority of Selectors
+        ----------------------------- */
         * {
             font: 20px "Comic Sans MS";
         }
@@ -13,6 +16,8 @@
             text-align: center;
             text-transform: capitalize;
             text-decoration: underline;
+            margin-top: 10px;
+            margin-bottom: 10px;
             width: 500px;
         }
 
@@ -20,6 +25,7 @@
             background-color: yellow;
             margin: 0px 0px 5px 5px;
             width: 300px;
+            padding: 5px;
         }
 
         .GroupFormat {
@@ -34,9 +40,32 @@
             font: italic 30px "Times New Roman";
             color: #fff;
         }
+
+        /* -----------------------------
+           PHẦN 2: Odd and Even Elements
+           (nối trực tiếp vào các div bên dưới)
+        ----------------------------- */
+
+        /* Áp dụng cho tất cả div trong phần nội dung */
+        body > div:nth-child(odd) {
+            border-left: 10px solid orange; /* thêm viền bên trái cho dòng lẻ */
+        }
+
+        body > div:nth-child(even) {
+            border-left: 10px solid lightblue; /* thêm viền bên trái cho dòng chẵn */
+        }
+
+        /* Làm nổi bật đoạn thứ 3 */
+        body > div:nth-child(6) {
+            /* Vì có <MyCustomizeTag> ở trên nên vị trí thứ 6 tương ứng với đoạn 3 */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
+
 <body>
+   
     <MyCustomizeTag>Here is customize tag</MyCustomizeTag>
 
     <div>The first paragraph.</div>
@@ -50,4 +79,3 @@
     <div>The seventh paragraph.</div>
 </body>
 </html>
-
