@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>The Priority of Selectors + Odd/Even</title>
+    <title>Selectors Combination: Priority + Odd/Even</title>
     <style type="text/css">
-        /* -----------------------------
+        /* ------------------------
            PHẦN 1: Priority of Selectors
-        ----------------------------- */
+        -------------------------*/
         * {
             font: 20px "Comic Sans MS";
         }
@@ -41,31 +41,40 @@
             color: #fff;
         }
 
-        /* -----------------------------
-           PHẦN 2: Odd and Even Elements
-           (nối trực tiếp vào các div bên dưới)
-        ----------------------------- */
-
-        /* Áp dụng cho tất cả div trong phần nội dung */
-        body > div:nth-child(odd) {
-            border-left: 10px solid orange; /* thêm viền bên trái cho dòng lẻ */
+        /* ------------------------
+           PHẦN 2: Recognize Odd and Even Elements
+           (áp dụng cho phần danh sách thứ 2 bên dưới)
+        -------------------------*/
+        .oddEvenSection div {
+            width: 400px;
+            margin: 5px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: lightgray;
         }
 
-        body > div:nth-child(even) {
-            border-left: 10px solid lightblue; /* thêm viền bên trái cho dòng chẵn */
+        /* Dòng lẻ (1, 3, 5, ...) */
+        .oddEvenSection div:nth-child(odd) {
+            background-color: #FFD700; /* vàng */
         }
 
-        /* Làm nổi bật đoạn thứ 3 */
-        body > div:nth-child(6) {
-            /* Vì có <MyCustomizeTag> ở trên nên vị trí thứ 6 tương ứng với đoạn 3 */
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Dòng chẵn (2, 4, 6, ...) */
+        .oddEvenSection div:nth-child(even) {
+            background-color: #ADD8E6; /* xanh nhạt */
+        }
+
+        /* Đánh dấu dòng thứ 3 nổi bật */
+        .oddEvenSection div:nth-child(3) {
+            font-weight: bold;
+            color: red;
         }
     </style>
 </head>
 
 <body>
-   
+    <!-- ===================== -->
+    <!-- PART 1: PRIORITY TEST -->
+    <!-- ===================== -->
     <MyCustomizeTag>Here is customize tag</MyCustomizeTag>
 
     <div>The first paragraph.</div>
@@ -77,5 +86,22 @@
     <div class="GroupFormat">The fifth paragraph.</div>
     <div class="GroupFormat">The sixth paragraph.</div>
     <div>The seventh paragraph.</div>
+
+    <hr style="margin: 40px 0;">
+
+    <!-- ===================== -->
+    <!-- PART 2: ODD/EVEN TEST -->
+    <!-- ===================== -->
+    <h2 style="text-align:center;">Recognize Odd and Even Elements</h2>
+
+    <div class="oddEvenSection">
+        <div>The first paragraph.</div>
+        <div>The second paragraph.</div>
+        <div>The third paragraph.</div>
+        <div>The fourth paragraph.</div>
+        <div>The fifth paragraph.</div>
+        <div>The sixth paragraph.</div>
+        <div>The seventh paragraph.</div>
+    </div>
 </body>
 </html>
