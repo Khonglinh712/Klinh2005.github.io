@@ -4,30 +4,43 @@
     <meta charset="UTF-8">
     <title>Aptech CSS3 Practice</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 30px;
-            background-color: #fafafa;
+        /* ===== MENU ===== */
+        .menu {
+            background: linear-gradient(to right, #ff7eb3, #ff758c);
+            text-align: center;
+            padding: 12px 0;
         }
 
-        h2 {
-            text-align: center;
-            color: #333;
-            margin-top: 40px;
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 20px;
+            font-family: Arial, sans-serif;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #fff3bf;
         }
 
         /* ===== PHẦN 1: RECOGNIZE ODD AND EVEN ELEMENT ===== */
+        h2 {
+            text-align: center;
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin-top: 30px;
+        }
+
         .subject-list {
             width: 400px;
-            margin: 20px auto;
+            margin: 10px auto;
+            padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 10px;
-            overflow: hidden;
         }
 
         .subject-list div {
-            padding: 10px;
-            font-size: 15px;
+            padding: 6px;
         }
 
         .subject-list div:nth-child(even) {
@@ -39,57 +52,68 @@
         }
 
         hr {
-            margin: 50px auto;
-            width: 70%;
-            border: 1px dashed #ccc;
+            margin: 40px 0;
         }
 
         /* ===== PHẦN 2: CREATE PRODUCT LIST WITH CSS3 ===== */
         .product-container {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             gap: 40px;
             flex-wrap: wrap;
+            padding: 20px;
         }
 
         .Product {
             text-align: center;
-            width: 160px;
+            width: 180px;
             cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .Product:hover {
-            transform: scale(1.05);
+            transition: transform 0.3s ease;
         }
 
         .Product img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 20px;
             box-shadow: 5px 5px 10px #aaa;
+            transition: transform 0.3s;
+        }
+
+        .Product:hover img {
+            transform: scale(1.1);
         }
 
         .ProductDetails {
-            display: none;
-            margin-top: 5px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            margin-top: 10px;
+        }
+
+        .Product:hover .ProductDetails {
+            opacity: 1;
         }
 
         .ProductName {
             font-weight: bold;
+            color: #ff758c;
         }
 
         .ProductPrice {
             font-style: italic;
-        }
-
-        .Product:hover .ProductDetails {
-            display: block;
+            color: #555;
         }
     </style>
 </head>
 <body>
+
+    <!-- ===== MENU ===== -->
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </div>
 
     <!-- ===== PHẦN 1 ===== -->
     <h2>Recognize Odd and Even Element</h2>
@@ -119,7 +143,7 @@
             <img src="tulip.jpg" alt="Tulip">
             <div class="ProductDetails">
                 <div class="ProductName">Tulip</div>
-                <div class="ProductPrice">2.0$</div>
+                <div class="ProductPrice">1.2$</div>
             </div>
         </div>
 
