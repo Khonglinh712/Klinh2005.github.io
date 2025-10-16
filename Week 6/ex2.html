@@ -1,160 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Aptech CSS3 Practice</title>
-    <style>
-        /* ===== MENU ===== */
-        .menu {
-            background: linear-gradient(to right, #ff7eb3, #ff758c);
-            text-align: center;
-            padding: 12px 0;
-        }
+  <meta charset="UTF-8">
+  <title>Aptech Semester 1's Subject</title>
+  <style>
+    /* ===== PHẦN 1: RECOGNIZE ODD AND EVEN ELEMENT ===== */
+    h1 {
+      text-align: center;
+      font-family: 'Times New Roman', serif;
+      color: #222;
+    }
 
-        .menu a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 20px;
-            font-family: Arial, sans-serif;
-            transition: color 0.3s;
-        }
+    .subject-list {
+      width: 400px;
+      margin: 10px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      font-family: 'Times New Roman', serif;
+    }
 
-        .menu a:hover {
-            color: #fff3bf;
-        }
+    .subject-list div {
+      padding: 6px;
+    }
 
-        /* ===== PHẦN 1: RECOGNIZE ODD AND EVEN ELEMENT ===== */
-        h2 {
-            text-align: center;
-            color: #333;
-            font-family: Arial, sans-serif;
-            margin-top: 30px;
-        }
+    .subject-list div:nth-child(even) {
+      background-color: #ffffcc; /* vàng nhạt */
+    }
 
-        .subject-list {
-            width: 400px;
-            margin: 10px auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
+    .subject-list div:nth-child(odd) {
+      background-color: #fff; /* trắng */
+    }
 
-        .subject-list div {
-            padding: 6px;
-        }
+    /* ===== PHẦN 2: CREATE PRODUCT LIST WITH CSS3 ===== */
+    .ProductDetails {
+      display: none;
+    }
 
-        .subject-list div:nth-child(even) {
-            background-color: #d0ebff; /* xanh nhạt */
-        }
+    .Product img {
+      width: 150px;
+      height: 150px;
+      border-radius: 20px;
+      box-shadow: 5px 5px 10px #aaa;
+    }
 
-        .subject-list div:nth-child(odd) {
-            background-color: #fff3bf; /* vàng nhạt */
-        }
+    .ProductName {
+      font-weight: bold;
+    }
 
-        hr {
-            margin: 40px 0;
-        }
+    .ProductPrice {
+      font-style: italic;
+    }
 
-        /* ===== PHẦN 2: CREATE PRODUCT LIST WITH CSS3 ===== */
-        .product-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 40px;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
+    .ProductPrice::before {
+      content: " - ";
+    }
 
-        .Product {
-            text-align: center;
-            width: 180px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    .Product {
+      text-align: center;
+      width: 150px;
+      margin: 0px 20px;
+      float: left;
+      cursor: pointer;
+    }
 
-        .Product img {
-            width: 160px;
-            height: 160px;
-            border-radius: 20px;
-            box-shadow: 5px 5px 10px #aaa;
-            transition: transform 0.3s;
-        }
-
-        .Product:hover img {
-            transform: scale(1.1);
-        }
-
-        .ProductDetails {
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            margin-top: 10px;
-        }
-
-        .Product:hover .ProductDetails {
-            opacity: 1;
-        }
-
-        .ProductName {
-            font-weight: bold;
-            color: #ff758c;
-        }
-
-        .ProductPrice {
-            font-style: italic;
-            color: #555;
-        }
-    </style>
+    .Product:hover .ProductDetails {
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- ===== MENU ===== -->
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Courses</a>
-        <a href="#">Products</a>
-        <a href="#">Contact</a>
+  <!-- ===== PHẦN 1 ===== -->
+  <h1>Aptech Semester 1's Subject</h1>
+  <div class="subject-list">
+    <div>Elementary Programming in C.</div>
+    <div>Explore HTML, DHTML and JavaScript.</div>
+    <div>Designing Web Sites in Dreamweaver.</div>
+    <div>RDBMS and Data Management.</div>
+    <div>Working with SQL Server Database Objects.</div>
+    <div>eProject (Dreamweaver).</div>
+  </div>
+
+  <h3 style="text-align:center;">Figure 7.2</h3>
+  <hr>
+
+  <!-- ===== PHẦN 2 ===== -->
+  <h3 style="text-align:center;">3. Create product list with CSS3</h3>
+  <div>
+    <div class="Product">
+      <img src="img/rose.jpg" alt="Rose">
+      <div class="ProductDetails">
+        <span class="ProductName">Rose</span>
+        <span class="ProductPrice">1.5$</span>
+      </div>
     </div>
 
-    <!-- ===== PHẦN 1 ===== -->
-    <h2>Recognize Odd and Even Element</h2>
-    <div class="subject-list">
-        <div>Elementary Programming in C.</div>
-        <div>Explore HTML, DHTML and JavaScript.</div>
-        <div>Designing Web Sites in Dreamweaver.</div>
-        <div>RDBMS and Data Management.</div>
-        <div>Working with SQL Server Database Objects.</div>
-        <div>eProject (Dreamweaver).</div>
+    <div class="Product">
+      <img src="img/tulip.jpg" alt="Tulip">
+      <div class="ProductDetails">
+        <span class="ProductName">Tulip</span>
+        <span class="ProductPrice">2.0$</span>
+      </div>
     </div>
 
-    <hr>
-
-    <!-- ===== PHẦN 2 ===== -->
-    <h2>Create Product List with CSS3</h2>
-    <div class="product-container">
-        <div class="Product">
-            <img src="rose.jpg" alt="Rose">
-            <div class="ProductDetails">
-                <div class="ProductName">Rose</div>
-                <div class="ProductPrice">1.5$</div>
-            </div>
-        </div>
-
-        <div class="Product">
-            <img src="tulip.jpg" alt="Tulip">
-            <div class="ProductDetails">
-                <div class="ProductName">Tulip</div>
-                <div class="ProductPrice">1.2$</div>
-            </div>
-        </div>
-
-        <div class="Product">
-            <img src="daisy.jpg" alt="Daisy">
-            <div class="ProductDetails">
-                <div class="ProductName">Daisy</div>
-                <div class="ProductPrice">1.3$</div>
-            </div>
-        </div>
+    <div class="Product">
+      <img src="img/daisy.jpg" alt="Daisy">
+      <div class="ProductDetails">
+        <span class="ProductName">Daisy</span>
+        <span class="ProductPrice">1.0$</span>
+      </div>
     </div>
+  </div>
 
 </body>
 </html>
