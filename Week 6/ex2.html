@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <title>Aptech Semester 1's Subject</title>
   <style>
-    /* ===== PHẦN 1: RECOGNIZE ODD AND EVEN ELEMENT ===== */
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: white;
+      color: #222;
+    }
+
+    /* ===== PHẦN 1: ODD/EVEN ===== */
     h1 {
       text-align: center;
-      font-family: 'Times New Roman', serif;
-      color: #222;
+      font-weight: bold;
     }
 
     .subject-list {
@@ -16,7 +21,6 @@
       margin: 10px auto;
       padding: 10px;
       border: 1px solid #ccc;
-      font-family: 'Times New Roman', serif;
     }
 
     .subject-list div {
@@ -28,12 +32,32 @@
     }
 
     .subject-list div:nth-child(odd) {
-      background-color: #fff; /* trắng */
+      background-color: #fffff0; /* gần như trắng */
     }
 
-    /* ===== PHẦN 2: CREATE PRODUCT LIST WITH CSS3 ===== */
-    .ProductDetails {
-      display: none;
+    h3 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid black;
+      margin: 40px 0;
+    }
+
+    /* ===== PHẦN 2: PRODUCT LIST ===== */
+    .product-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .Product {
+      text-align: center;
+      width: 150px;
+      cursor: pointer;
     }
 
     .Product img {
@@ -41,37 +65,27 @@
       height: 150px;
       border-radius: 20px;
       box-shadow: 5px 5px 10px #aaa;
+      transition: transform 0.3s;
+    }
+
+    .Product:hover img {
+      transform: scale(1.05);
     }
 
     .ProductName {
       font-weight: bold;
+      margin-top: 5px;
     }
 
     .ProductPrice {
       font-style: italic;
     }
-
-    .ProductPrice::before {
-      content: " - ";
-    }
-
-    .Product {
-      text-align: center;
-      width: 150px;
-      margin: 0px 20px;
-      float: left;
-      cursor: pointer;
-    }
-
-    .Product:hover .ProductDetails {
-      display: block;
-    }
   </style>
 </head>
 <body>
 
-  <!-- ===== PHẦN 1 ===== -->
   <h1>Aptech Semester 1's Subject</h1>
+
   <div class="subject-list">
     <div>Elementary Programming in C.</div>
     <div>Explore HTML, DHTML and JavaScript.</div>
@@ -81,36 +95,31 @@
     <div>eProject (Dreamweaver).</div>
   </div>
 
-  <h3 style="text-align:center;">Figure 7.2</h3>
+  <h3>Figure 7.2</h3>
   <hr>
 
-  <!-- ===== PHẦN 2 ===== -->
-  <h3 style="text-align:center;">3. Create product list with CSS3</h3>
-  <div>
+  <h3>3. Create product list with CSS3</h3>
+  <div class="product-container">
     <div class="Product">
-      <img src="img/rose.jpg" alt="Rose">
-      <div class="ProductDetails">
-        <span class="ProductName">Rose</span>
-        <span class="ProductPrice">1.5$</span>
-      </div>
+      <img src="rose.jpg" alt="Rose">
+      <div class="ProductName">Rose</div>
+      <div class="ProductPrice">1.5$</div>
     </div>
 
     <div class="Product">
-      <img src="img/tulip.jpg" alt="Tulip">
-      <div class="ProductDetails">
-        <span class="ProductName">Tulip</span>
-        <span class="ProductPrice">2.0$</span>
-      </div>
+      <img src="tulip.jpg" alt="Tulip">
+      <div class="ProductName">Tulip</div>
+      <div class="ProductPrice">2.0$</div>
     </div>
 
     <div class="Product">
-      <img src="img/daisy.jpg" alt="Daisy">
-      <div class="ProductDetails">
-        <span class="ProductName">Daisy</span>
-        <span class="ProductPrice">1.0$</span>
-      </div>
+      <img src="daisy.jpg" alt="Daisy">
+      <div class="ProductName">Daisy</div>
+      <div class="ProductPrice">1.0$</div>
     </div>
   </div>
+
+  <h3>Figure 7.3</h3>
 
 </body>
 </html>
