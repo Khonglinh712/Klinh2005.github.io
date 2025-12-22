@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration Form</title>
+
+<!-- 1. CSS thiết kế form bằng Flexbox -->
+    <style>
+        form {
+            width: 300px;
+            margin: 50px auto;
+            display: flex;              
+            flex-direction: column;     
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .strength {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 2. HTML: Tạo form đăng ký người dùng -->
+<form id="registerForm">
+
+     <!-- 2.1 Username -->
+    <label for="username">Username</label>
+    <input type="text" id="username">
+
+    <!-- 2.2 Password -->
+    <label for="password">Password</label>
+    <input type="password" id="password">
+
+    
+    <div id="strengthText" class="strength"></div>
+
+    <!-- Profile picture input -->
+    <label for="image">Profile Picture</label>
+    <input type="file" id="image" accept=".jpg,.png">
+
+    <button type="submit">Register</button>
+</form>
+
+<script>
+    /* ===== JavaScript: Get form elements ===== */
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const image = document.getElementById("image");
+    const strengthText = document.getElementById("strengthText");
+
+    /* ===== Validation: Username must be 5–15 characters ===== */
+    function validateUsername() {
+        const length = username.value.length;
+        if (length < 5 || length > 15) {
+            alert("Username must be 5–15 characters");
+            return false;
+        }
+        return true;
+    }
+
+    /* ===== Validation: Password must contain letters and numbers ===== */
+    function validatePassword() {
+        const value = password.value;
+        const hasLetter = /[a-zA-Z]/.test(value);
+        const hasNumber = /[0-9]/.test(value);
+
+        if (!hasLetter || !hasNumber) {
+            alert("Password must contain both letters and numbers");
+            return false;
+        }
+        return true;
+    }
+
+    /* ===== Validation: Image must be JPG or PNG ===== */
+    function validateImage() {
+        if (image.files.length === 0) return true;
+
+        const fileName = image.files[0].name.toLowerCase();
+        if (!fileName.endsWith(".jpg") && !fileName.endsWith(".png")) {
+            alert("Profile picture must be JPG or PNG");
+            return false;
+        }
+        return true;
+    }
+
+    /* ===== Password strength indicator (real-time) ===== */
+    password.addEventListener("input", function () {
+        const value = password.value;
+
+        if (value.length < 6) {
+            strengthText.textContent = "Weak";
+            strengthText.style.color = "red";
+        } 
+        else if (value.length >= 6 && /[a-zA-Z]/.test(value) && /[0-9]/.test(value)) {
+            strengthText.textContent = "Medium";
+            strengthText.style.color = "orange";
+        } 
+        if (value.length >= 8 && /[a-zA-Z]/.test(value) && /[0-9]/.test(value)) {
+            strengthText.textContent = "Strong";
+            strengthText.style.color = "green";
+        }
+    });
+
+    /* ===== Form submit handling ===== */
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (
+            validateUsername() &&
+            validatePassword() &&
+            validateImage()
+        ) {
+            alert("Form submitted successfully!");
+        }
+    });
+</script>
+
+</body>
+</html>
 
